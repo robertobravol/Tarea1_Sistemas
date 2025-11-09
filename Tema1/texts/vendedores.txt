@@ -1,0 +1,4 @@
+Usuario,clave,Nombre
+jlopez,pass123,Juan Lopez
+mgomez,seguro456,Maria Gomez
+cperez,admin789,Carlos Perez

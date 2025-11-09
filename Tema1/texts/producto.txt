@@ -1,0 +1,5 @@
+Codigo_producto,Nombre_producto,cantidad_disponible,costo,precio_venta
+P001,Laptop Dell XPS 15,25,1200.50,1499.99
+P002,Teclado Mecanico RGB,80,65.00,99.99
+P003,Mouse Inalambrico Logitech,150,30.25,49.50
+P004,Monitor 27" 4K,40,250.00,349.99

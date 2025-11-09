@@ -1,0 +1,5 @@
+Num_factura,Codigo_producto,Nombre_producto,cantidad_vendida,costo,precio_venta,fecha_venta
+0001,P001,Laptop Dell XPS 15,1,1200.50,1499.99,2025-11-01
+0002,P003,Mouse Inalambrico Logitech,2,30.25,49.50,2025-11-03
+0003,P002,Teclado Mecanico RGB,1,65.00,99.99,2025-11-04
+0004,P001,Laptop Dell XPS 15,1,1200.50,1499.99,2025-11-05
