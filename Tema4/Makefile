@@ -1,0 +1,53 @@
+# =====================================
+# Makefile para la estructura del deber
+# Genera .o y .s dentro de Tema3
+# =====================================
+
+CC = gcc
+CFLAGS = -Wall -Wextra -I../Tema1/include -g
+
+# Rutas
+SRC = ../Tema1/src
+INCLUDE = ../Tema1/include
+OBJ_DIR = ../Tema3/obj
+ASM_DIR = ../Tema3/asm
+BIN_DIR = ../Tema3
+BIN = programa
+
+# Archivos objeto
+OBJ = Main.o productos.o usuarios.o
+
+# Crear carpetas si no existen
+$(shell mkdir -p $(OBJ_DIR))
+$(shell mkdir -p $(ASM_DIR))
+
+all: $(BIN_DIR)/$(BIN)
+
+# Enlace
+$(BIN_DIR)/$(BIN): $(addprefix $(OBJ_DIR)/, $(OBJ))
+	$(CC) $^ -o $@
+
+# Compilar Main
+$(OBJ_DIR)/Main.o: $(SRC)/Main.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	objdump -d $@ > $(ASM_DIR)/Main.s
+
+# Compilar productos
+$(OBJ_DIR)/productos.o: $(SRC)/productos.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	objdump -d $@ > $(ASM_DIR)/productos.s
+
+# Compilar usuarios
+$(OBJ_DIR)/usuarios.o: $(SRC)/usuarios.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	objdump -d $@ > $(ASM_DIR)/usuarios.s
+
+
+clean:
+	rm -f $(OBJ_DIR)/*.o
+
+clean_s:
+	rm -f $(ASM_DIR)/*.s
+
+mrproper: clean clean_s
+	rm -f $(BIN_DIR)/$(BIN)

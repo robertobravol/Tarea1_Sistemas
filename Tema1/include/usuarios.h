@@ -7,14 +7,8 @@ typedef struct Usuario {
     char nombre[100];
 } Usuario;
 
-int cargarUsuarios(Usuario listaUsuarios[], const char* rutaArchivo);
-int verificarCredenciales(Usuario listaUsuarios[], int cantidadUsuarios, const char* usuario, const char* clave);
-
-
-
-
-
-
-
+Usuario* cargarUsuarios(const char* ruta, int* cantidad);
+void liberarUsuarios(Usuario* lista);
+int buscarUsuario(Usuario* lista, int cantidad, const char* usuario, const char* clave);
 
 #endif
